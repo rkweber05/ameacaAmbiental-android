@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_strong">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/lista"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:layout_height="585dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/novaAmeaca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/gray_strong"
+                android:textSize="20dp"
+                android:text="NOVA AMEAÇA" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+
