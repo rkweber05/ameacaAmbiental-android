@@ -16,9 +16,10 @@
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Endereço"
             android:textColor="@color/white"
             android:textSize="24dp"
-            android:text="Endereço" />
+             />
 
         <EditText
             android:id="@+id/editTextPersonName5"
@@ -39,9 +40,10 @@
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Data"
                 android:textColor="@color/white"
                 android:textSize="24dp"
-                android:text="Data" />
+                />
 
             <EditText
                 android:id="@+id/editTextPersonName8"
@@ -57,9 +59,9 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Descrição"
                 android:textColor="@color/white"
-                android:textSize="24dp"
-                android:text="Descrição" />
+                android:textSize="24dp"/>
 
             <EditText
                 android:id="@+id/editTextPersonName9"
@@ -75,9 +77,10 @@
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/gray_strong"
-                android:textSize="20dp"
+                android:onClick="addStudent"
+                android:backgroundTint="@color/yellow"
+                android:textColor="@color/black"
+                android:textSize="24dp"
                 android:text="ATUALIZAR" />
         </LinearLayout>
     </LinearLayout>

@@ -1,10 +1,10 @@
 package com.trabalho.ameacasambientais;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AddStudent extends AppCompatActivity {
 
@@ -20,13 +20,11 @@ public class AddStudent extends AppCompatActivity {
         txtData = findViewById(R.id.editTextPersonName8);
         txtDesc = findViewById(R.id.editTextPersonName9);
 
-        db = new StudentSQLiteDatabase
-
-                (
+        db = new StudentSQLiteDatabase(
                 getBaseContext());
     }
 
-    public void addStudent(View v){
+    public void addStudent(View v) {
         Student s = new Student();
         s.setEndereco(txtEndereco.getText().toString());
         s.setData(txtData.getText().toString());

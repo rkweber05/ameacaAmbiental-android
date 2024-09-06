@@ -9,4 +9,5 @@
     <color name="neutral_gray">#424242</color> <!-- Cinza forte -->
     <color name="analogous_yellow">#FBC02D</color> <!-- Amarelo forte -->
     <color name="analogous_blue">#1976D2</color> <!-- Azul forte -->
+    <color name="yellow">#FFFF00</color> <!--Amarelo-->
 </resources>

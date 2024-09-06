@@ -10,6 +10,10 @@ public class Student {
     private Long id;
     private String data;
 
+    public Student(){
+
+    }
+
     public Student( String endereco, String data) {
         this.endereco = endereco;
         this.data = data;
@@ -49,6 +53,6 @@ public class Student {
     @NonNull
     @Override
     public String toString(){
-      return endereco + "\n" + data;
+        return endereco + "\n" + data;
     }
 }

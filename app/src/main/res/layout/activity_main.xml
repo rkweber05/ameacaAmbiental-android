@@ -7,31 +7,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:textSize="24dp"
         android:orientation="vertical">
 
         <ListView
             android:id="@+id/lista"
             android:layout_width="match_parent"
+            android:layout_height="592dp"
             android:textColor="@color/white"
-            android:textSize="24dp"
-            android:layout_height="585dp" />
+            android:textSize="24dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:textColor="@color/white"
+            android:textSize="24dp">
 
             <Button
                 android:id="@+id/novaAmeaca"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="18dp"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/gray_strong"
-                android:textSize="20dp"
-                android:text="NOVA AMEAÇA" />
+                android:onClick="changeToAdd"
+                android:text="NOVA AMEAÇA"
+                android:backgroundTint="@color/yellow"
+                android:textColor="@color/black"
+                android:textSize="24dp"/>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

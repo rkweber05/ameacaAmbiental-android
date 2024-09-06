@@ -1,14 +1,11 @@
 package com.trabalho.ameacasambientais;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -19,6 +16,9 @@ import java.util.Collection;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    ListView listStudent;
+    StudentAdapter studentAdapter;
+    StudentSQLiteDatabase db;
 
     private Button button;
 
@@ -27,37 +27,38 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Window window = this.getWindow();
-        window.setStatusBarColor(this.getResources().getColor(android.R.color.white));
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        db = new StudentSQLiteDatabase(
+                getBaseContext());
 
-        ListView lista = findViewById(R.id.lista);
-        List<Student> student = todosOsStudents();
-        ArrayAdapter<Student> adapter = new ArrayAdapter<>(
-                this, android.R.layout.simple_list_item_1, student);
-        lista.setAdapter(adapter);
-        lista.setItemsCanFocus(true);
+        listStudent = findViewById(R.id.lista);
+        studentAdapter = new StudentAdapter(getBaseContext(), db);
+        listStudent.setAdapter(studentAdapter);
 
-        button = findViewById(R.id.novaAmeaca);
-        button.setOnClickListener(new View.OnClickListener() {
+        listStudent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                openActivity2();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                changeToUpdate(id);
+            }
+        });
+
+        listStudent.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                db.removeStudent((Student) studentAdapter.getItem(position));
+                studentAdapter.notifyDataSetChanged();
+                return true;
             }
         });
     }
 
-    public List<Student> todosOsStudents() {
-        return new ArrayList<>(Arrays.asList(
-                new Student("Corte Irregular de Vegetação Nativa.", "02/04/2023"),
-                new Student("Pesca predatória com rede de arrasto.", "02/05/2023"),
-                new Student("Descarte irregular de lixo hospitalar.", "02/07/2023"),
-                new Student("Derrame químico em sistema de esgoto pluviral.", "02/08/2023")
-        ));
+    public void changeToAdd(View v){
+        Intent it = new Intent(getBaseContext(), AddStudent.class);
+        startActivity(it);
     }
 
-    private void openActivity2() {
-        Intent intent = new Intent(this, AddStudent.class);
-        startActivity(intent);
+    public void changeToUpdate(Long id){
+        Intent it = new Intent(getBaseContext(), EditStudent.class);
+        it.putExtra("ID", id);
+        startActivity(it);
     }
 }
