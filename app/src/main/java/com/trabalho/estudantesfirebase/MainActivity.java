@@ -1,4 +1,4 @@
-package com.trabalho.ameacasambientais;
+package com.trabalho.estudantesfirebase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
