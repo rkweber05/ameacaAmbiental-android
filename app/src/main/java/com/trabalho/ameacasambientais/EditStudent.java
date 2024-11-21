@@ -37,6 +37,5 @@ public class EditStudent extends AppCompatActivity {
         current.setDesc(txtDesc.getText().toString());
         db.updateStudent(current);
         finish();
-
     }
 }

@@ -77,11 +77,11 @@
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="addStudent"
                 android:backgroundTint="@color/yellow"
+                android:onClick="updateStudent"
+                android:text="ATUALIZAR"
                 android:textColor="@color/black"
-                android:textSize="24dp"
-                android:text="ATUALIZAR" />
+                android:textSize="24dp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
